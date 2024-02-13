@@ -26,13 +26,13 @@ def show_bar_plot(total_penjualan):
 
 def show_bar_plot2(penjualan_permusim):
     # Membuat plot
-    fig, ax = plt.subplots(figsize=(10, 6))
+    fig, ax = plt.subplots(figsize=(12, 6))
     penjualan_permusim.plot(kind='bar', color='skyblue', ax=ax)
     ax.set_title('Peminjaman sepeda per Musim')
     ax.set_xlabel('Musim')
     ax.set_ylabel('Total Peminjaman')
-    ax.set_xticks(range(0, 4))
-    ax.set_xticklabels(['Springer', 'Summer', 'Fall', 'Winter'], rotation=45)
+    ax.set_xticks(range(0, 4),['Springer', 'Summer', 'Fall', 'Winter'], rotation=45)
+    # ax.set_xticklabels()
     ax.grid(True)
 
     # Menampilkan plot menggunakan Streamlit
@@ -47,11 +47,11 @@ st.title('Dasboard Analisa Peminjaman Sepeda 2011-2012')
 st.write(data_day)
  
 
-st.title("Peminjaman sepeda per Musim")
+st.title("Peminjaman pertahun")
 show_bar_plot(total_penjualan)
  
 
-st.title("Penjualan pertahun")
-show_bar_plot2(total_penjualan)    
+st.title("Penjualan permusim")
+show_bar_plot2(penjualan_permusim)    
 
 st.text('Muhamd Wisnu Mubarok')
